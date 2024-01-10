@@ -5,20 +5,20 @@ const CoffeeItem = () => {
       style={{ border: "1px solid red" }}
     >
       <img
-        className="coffeeImage rounded-xl"
+        className="coffeeImage rounded-xl pb-2"
         src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/house-coffee.jpg"
         alt=""
       />
       <div className="flex justify-between">
-        <div className="coffeeTitle">House Coffee</div>
-        <div className="coffeePrice bg-[#BEE3CC] text-[#111315] p-1 rounded">
+        <div className="coffeeTitle p-1">House Coffee</div>
+        <div className="coffeePrice priceText bg-[#BEE3CC] text-[#111315] px-3 py-1 rounded">
           $3.50
         </div>
       </div>
       <div className="flex">
         <img src="./images/Star_fill.svg" alt="" className="pl-1" />
         <div className="coffeeRating pl-1">4.85</div>
-        <div className="coffeeVotes pl-1">(15 votes)</div>
+        <div className="coffeeVotes smallText pl-1">(15 votes)</div>
       </div>
     </div>
   );

@@ -5,4 +5,21 @@
 body {
   margin: 0;
   /* background-color: #111315; */
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.label {
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.smallText {
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.priceText {
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
 }
