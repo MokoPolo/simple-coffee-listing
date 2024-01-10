@@ -1,12 +1,12 @@
 import Foo from "./foo";
 import Header from "../components/header/header";
+import CoffeeList from "../components/coffee/coffee-list";
 
 const Home = () => (
-  <main className="top-left w-full">
+  <main className="">
     <Header />
-    <Foo />
-    <h1>Home</h1>
-    <p>Home page content</p>
+    {/* <Foo /> */}
+    <CoffeeList />
   </main>
 );
 
