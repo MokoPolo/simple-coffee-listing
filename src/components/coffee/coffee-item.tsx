@@ -1,16 +1,19 @@
 const CoffeeItem = () => {
   return (
     <div
-      className="coffeeItem text-[#FEF7EE] p-2"
-      style={{ border: "1px solid red" }}
+      className="coffeeItem relative text-[#FEF7EE] p-2"
+      style={{ width: "260px" }}
     >
+      <div className="coffeePopular absolute top-3 left-3 bg-[#F6C768] text-[#111315] px-2 py-1 rounded-xl smallText m-1">
+        Popular
+      </div>
       <img
         className="coffeeImage rounded-xl pb-2"
         src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/house-coffee.jpg"
         alt=""
       />
       <div className="flex justify-between">
-        <div className="coffeeTitle p-1">House Coffee</div>
+        <div className="coffeeTitle">House Coffee</div>
         <div className="coffeePrice priceText bg-[#BEE3CC] text-[#111315] px-3 py-1 rounded">
           $3.50
         </div>

@@ -2,7 +2,7 @@ import CoffeeItem from "./coffee-item";
 
 const CoffeeList = () => {
   return (
-    <div className="bg-[#1B1D1F] text-[#FEF7EE]">
+    <div className="bg-[#1B1D1F] text-[#FEF7EE] border border-red-500 border-solid border-1 min-h-screen">
       <h1 className="text-[#FEF7EE]">Our Collection</h1>
       <p className="text-[#6F757C]">
         Introducing our Coffee Collection, a selection of unique coffees from

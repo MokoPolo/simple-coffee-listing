@@ -14,3 +14,6 @@
 - [ ] figure out bootstrap
 - [ ] make sure layout changes for different resolutions
 - [ ] component for coffee info
+
+Queries
+https://refine.dev/blog/react-query-guide/#performing-basic-data-fetching
