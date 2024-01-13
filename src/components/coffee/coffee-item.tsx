@@ -12,6 +12,7 @@ const CoffeeItem = () => {
         src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/house-coffee.jpg"
         alt=""
       />
+
       <div className="flex justify-between">
         <div className="coffeeTitle">House Coffee</div>
         <div className="coffeePrice priceText bg-[#BEE3CC] text-[#111315] px-3 py-1 rounded">
