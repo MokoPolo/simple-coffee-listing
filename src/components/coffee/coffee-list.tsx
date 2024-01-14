@@ -36,8 +36,8 @@ const CoffeeList = () => {
           </li>
         </ul>
       </div>
-      {coffeeData.map((key) => (
-        <CoffeeItem key={key} />
+      {coffeeData.map((coffee, key) => (
+        <CoffeeItem key={key} coffee={coffee} />
       ))}
     </div>
   );
