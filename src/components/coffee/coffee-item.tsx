@@ -10,13 +10,15 @@ const CoffeeItem: React.FC<Props> = ({ key, coffee }) => {
       className="coffeeItem relative text-[#FEF7EE] p-2"
       style={{ width: "260px" }}
     >
-      <div className="coffeePopular absolute top-3 left-3 bg-[#F6C768] text-[#111315] px-2 py-1 rounded-xl smallText m-1">
-        Popular
-      </div>
+      {coffee.popular && (
+        <div className="coffeePopular absolute top-3 left-3 bg-[#F6C768] text-[#111315] px-2 py-1 rounded-xl smallText m-1">
+          Popular
+        </div>
+      )}
       <img className="coffeeImage rounded-xl pb-2" src={coffee.image} alt="" />
 
       <div className="flex justify-between">
-        <div className="coffeeTitle">House Coffee</div>
+        <div className="coffeeTitle">{coffee.name}</div>
         <div className="coffeePrice priceText bg-[#BEE3CC] text-[#111315] px-3 py-1 rounded">
           {coffee.price}
         </div>
