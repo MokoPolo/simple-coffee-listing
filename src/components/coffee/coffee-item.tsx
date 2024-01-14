@@ -24,7 +24,11 @@ const CoffeeItem: React.FC<Props> = ({ key, coffee }) => {
         </div>
       </div>
       <div className="flex">
-        <img src="./images/Star_fill.svg" alt="" className="pl-1" />
+        {coffee.rating > 0 ? (
+          <img src="./images/Star_fill.svg" alt="" className="pl-1" />
+        ) : (
+          <img src="./images/Star.svg" alt="" className="pl-1" />
+        )}
         <div className="coffeeRating pl-1">{coffee.rating}</div>
         <div className="coffeeVotes smallText pl-1 items-center flex">
           ({coffee.votes} votes)
