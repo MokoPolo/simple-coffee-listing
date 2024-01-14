@@ -1,6 +1,23 @@
 import CoffeeItem from "./coffee-item";
 
+import { useState, useEffect } from "react";
+
 const CoffeeList = () => {
+  const [coffeeData, setCoffeeData] = useState<Coffee[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json"
+      );
+      const data = await response.json();
+
+      setCoffeeData(data);
+    };
+
+    fetchData();
+  });
+
   return (
     <div className="bg-[#1B1D1F] text-[#FEF7EE] border border-red-500 border-solid border-1 min-h-screen">
       <h1 className="text-[#FEF7EE]">Our Collection</h1>
@@ -19,14 +36,10 @@ const CoffeeList = () => {
           </li>
         </ul>
       </div>
-      <CoffeeItem />
-      <CoffeeItem />
-      <CoffeeItem />
-      <CoffeeItem />
-      <CoffeeItem />
-      <CoffeeItem />
+      {coffeeData.map((key) => (
+        <CoffeeItem key={key} />
+      ))}
     </div>
   );
 };
-
 export default CoffeeList;
