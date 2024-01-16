@@ -17,29 +17,30 @@ const CoffeeList = () => {
 
     fetchData();
   });
-  // console.log(coffeeData);
   return (
-    <div className="bg-[#1B1D1F] text-[#FEF7EE] min-h-screen w-3/4 flex justify-center">
-      <div className="flex flex-col items-center w-[250px] md:w-[800px] h-screen mx-auto">
-        <h1 className="text-[#FEF7EE]">Our Collection</h1>
-        <p className="text-[#6F757C]">
-          Introducing our Coffee Collection, a selection of unique coffees from
-          different roast types and origins, expertly roasted in small batches
-          and shipped fresh weekly.
-        </p>
-        <div className="flex justify-center w-full">
-          <ul className="flex justify-center list-none">
-            <li className="p-2 m-2 bg-[#6F757C] rounded-lg">All Products</li>
-            <li className="p-2 m-2 ml-0 bg-[#6F757C] rounded-lg">
-              Available Now
-            </li>
-          </ul>
+    <div className="flex justify-center items-center h-full">
+      <div className="bg-[#1B1D1F] text-[#FEF7EE] rounded-xl">
+        <div className="flex flex-col items-center w-[250px] xl:w-[1000px] lg:w-[500px] m-[50px]">
+          <h1 className="text-[#FEF7EE]">Our Collection</h1>
+          <p className="text-[#6F757C] text-center">
+            Introducing our Coffee Collection, a selection of unique coffees
+            from different roast types and origins, expertly roasted in small
+            batches and shipped fresh weekly.
+          </p>
+          <div className="flex justify-center w-full">
+            <ul className="flex justify-center list-none">
+              <li className="p-2 m-2 bg-[#6F757C] rounded-lg">All Products</li>
+              <li className="p-2 m-2 ml-0 bg-[#6F757C] rounded-lg">
+                Available Now
+              </li>
+            </ul>
+          </div>
+          <section className="w-[250px] xl:w-[1000px] lg:w-[500px] grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2">
+            {coffeeData.map((coffee) => (
+              <CoffeeItem coffee={coffee} key={coffee.id} />
+            ))}
+          </section>
         </div>
-        <section className="w-[250px] md:w-[800px] grid grid-cols-1 md:grid-cols-3">
-          {coffeeData.map((coffee) => (
-            <CoffeeItem coffee={coffee} key={coffee.id} />
-          ))}
-        </section>
       </div>
     </div>
   );

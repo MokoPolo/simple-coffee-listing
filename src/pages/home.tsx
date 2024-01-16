@@ -1,9 +1,9 @@
-import Header from "../components/header/header";
+// import Header from "../components/header/header";
 import CoffeeList from "../components/coffee/coffee-list";
 
 const Home = () => (
-  <main className="">
-    <Header />
+  <main className="h-screen">
+    {/* <Header /> */}
     <CoffeeList />
   </main>
 );
