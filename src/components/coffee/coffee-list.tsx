@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 const CoffeeList = () => {
   const [coffeeData, setCoffeeData] = useState<Coffee[]>([]);
+  // Cheap way to keep original state so we don't keep pinging the API
+  const [originalCoffeeData, setoriginalCoffeeData] = useState<Coffee[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,17 +15,38 @@ const CoffeeList = () => {
       const data = await response.json();
 
       setCoffeeData(data);
+      // Easy way to copy data since this is just a simple project
+      setoriginalCoffeeData(JSON.parse(JSON.stringify(data)));
     };
 
     fetchData();
   }, []);
-
+  const setButtons = (allProductsButtonSelected: boolean) => {
+    const allProductsButton = document.getElementById("allProducts");
+    const availableNowButton = document.getElementById("availableNow");
+    if (allProductsButtonSelected) {
+      allProductsButton?.classList.add("bg-[#6F757C]");
+      allProductsButton?.classList.remove("bg-[#1B1D1F]");
+      availableNowButton?.classList.add("bg-[#1B1D1F]");
+      availableNowButton?.classList.remove("bg-[#6F757C]");
+    } else {
+      availableNowButton?.classList.add("bg-[#6F757C]");
+      availableNowButton?.classList.remove("bg-[#1B1D1F]");
+      allProductsButton?.classList.add("bg-[#1B1D1F]");
+      allProductsButton?.classList.remove("bg-[#6F757C]");
+    }
+  };
   const filterData = (available: boolean) => {
-    const filteredData = coffeeData.filter(
-      (coffee) => coffee.available === available
-    );
-    setCoffeeData(filteredData);
-    console.log(coffeeData);
+    if (available) {
+      const filteredData = coffeeData.filter(
+        (coffee) => coffee.available === available
+      );
+      setCoffeeData(filteredData);
+      setButtons(false);
+    } else {
+      setCoffeeData(JSON.parse(JSON.stringify(originalCoffeeData)));
+      setButtons(true);
+    }
   };
   return (
     <div className="flex justify-center mt-[5%] h-full">
@@ -37,10 +60,17 @@ const CoffeeList = () => {
           </p>
           <div className="flex justify-center w-full">
             <ul className="flex justify-center list-none">
-              <li className="p-2 m-2 bg-[#6F757C] rounded-lg">All Products</li>
               <li
-                className="p-2 m-2 ml-0 bg-[#6F757C] rounded-lg"
+                id="allProducts"
+                className="p-2 m-2 bg-[#6F757C] rounded-lg cursor-pointer"
+                onClick={() => filterData(false)}
+              >
+                All Products
+              </li>
+              <li
+                className="p-2 m-2 ml-0 bg-[#1B1D1F] rounded-lg cursor-pointer"
                 onClick={() => filterData(true)}
+                id="availableNow"
               >
                 Available Now
               </li>
