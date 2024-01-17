@@ -1,5 +1,5 @@
 type Coffee = {
-  available: string;
+  available: boolean;
   id: string;
   image: string;
   name: string;

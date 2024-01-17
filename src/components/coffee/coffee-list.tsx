@@ -16,7 +16,15 @@ const CoffeeList = () => {
     };
 
     fetchData();
-  });
+  }, []);
+
+  const filterData = (available: boolean) => {
+    const filteredData = coffeeData.filter(
+      (coffee) => coffee.available === available
+    );
+    setCoffeeData(filteredData);
+    console.log(coffeeData);
+  };
   return (
     <div className="flex justify-center mt-[5%] h-full">
       <div className="bg-[#1B1D1F] text-[#FEF7EE] rounded-xl">
@@ -30,7 +38,10 @@ const CoffeeList = () => {
           <div className="flex justify-center w-full">
             <ul className="flex justify-center list-none">
               <li className="p-2 m-2 bg-[#6F757C] rounded-lg">All Products</li>
-              <li className="p-2 m-2 ml-0 bg-[#6F757C] rounded-lg">
+              <li
+                className="p-2 m-2 ml-0 bg-[#6F757C] rounded-lg"
+                onClick={() => filterData(true)}
+              >
                 Available Now
               </li>
             </ul>
