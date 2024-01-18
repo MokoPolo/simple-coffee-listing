@@ -3,7 +3,6 @@ type Props = {
 };
 
 const CoffeeItem: React.FC<Props> = ({ coffee }) => {
-  // console.log(coffee);
   return (
     <div className="coffeeItem relative text-[#FEF7EE] p-2 max-w-[16rem]">
       {coffee.popular && (

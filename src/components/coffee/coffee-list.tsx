@@ -52,12 +52,21 @@ const CoffeeList = () => {
     <div className="flex justify-center mt-[5%] h-full">
       <div className="bg-[#1B1D1F] text-[#FEF7EE] rounded-xl">
         <div className="flex flex-col items-center w-[250px] xl:w-[1000px] lg:w-[500px] m-[50px]">
-          <h1 className="text-[#FEF7EE]">Our Collection</h1>
-          <p className="text-[#6F757C] text-center">
-            Introducing our Coffee Collection, a selection of unique coffees
-            from different roast types and origins, expertly roasted in small
-            batches and shipped fresh weekly.
-          </p>
+          <div
+            className="flex flex-col items-center"
+            style={{
+              backgroundImage: "url(./images/vector.svg)",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "right",
+            }}
+          >
+            <h1 className="text-[#FEF7EE]">Our Collection</h1>
+            <p className="text-[#6F757C] text-center">
+              Introducing our Coffee Collection, a selection of unique coffees
+              from different roast types and origins, expertly roasted in small
+              batches and shipped fresh weekly.
+            </p>
+          </div>
           <div className="flex justify-center w-full">
             <ul className="flex justify-center list-none">
               <li
