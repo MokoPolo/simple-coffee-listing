@@ -60,8 +60,10 @@ const CoffeeList = () => {
               backgroundPosition: "right",
             }}
           >
-            <h1 className="text-[#FEF7EE]">Our Collection</h1>
-            <p className="text-[#6F757C] text-center">
+            <h1 className="text-[#FEF7EE] h-[100px] flex items-end">
+              Our Collection
+            </h1>
+            <p className="text-[#6F757C] text-center lg:w-[450px] lg:h-[100px] flex items-center">
               Introducing our Coffee Collection, a selection of unique coffees
               from different roast types and origins, expertly roasted in small
               batches and shipped fresh weekly.
@@ -71,13 +73,13 @@ const CoffeeList = () => {
             <ul className="flex justify-center list-none">
               <li
                 id="allProducts"
-                className="p-2 m-2 bg-[#6F757C] rounded-lg cursor-pointer"
+                className="py-2 m-2 px-4 bg-[#6F757C] rounded-lg cursor-pointer"
                 onClick={() => filterData(false)}
               >
                 All Products
               </li>
               <li
-                className="p-2 m-2 ml-0 bg-[#1B1D1F] rounded-lg cursor-pointer"
+                className="py-2 m-2 ml-0 px-4 bg-[#1B1D1F] rounded-lg cursor-pointer"
                 onClick={() => filterData(true)}
                 id="availableNow"
               >

@@ -34,3 +34,8 @@ body {
   border: 1px solid red;
   border-radius: 10px;
 }
+
+h1 {
+  font-size: 32px;
+  font-family: "DM Sans";
+}

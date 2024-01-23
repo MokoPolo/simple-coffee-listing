@@ -12,21 +12,31 @@ const CoffeeItem: React.FC<Props> = ({ coffee }) => {
       )}
       <img className="coffeeImage rounded-xl pb-2" src={coffee.image} alt="" />
       <div className="flex justify-between">
-        <div className="coffeeTitle">{coffee.name}</div>
+        <div className="coffeeTitle font-bold">{coffee.name}</div>
         <div className="coffeePrice priceText bg-[#BEE3CC] text-[#111315] px-2 py-1 rounded">
           {coffee.price}
         </div>
       </div>
       <div className="flex">
         {coffee.rating > 0 ? (
-          <img src="./images/Star_fill.svg" alt="" className="pl-1" />
+          <span className="flex">
+            <img src="./images/Star_fill.svg" alt="" className="pl-1" />
+            <div className="coffeeRating pl-1 align-middle">
+              {coffee.rating}
+            </div>
+            <div className="coffeeVotes whitespace-nowrap coffeeTitle pl-1 items-center flex text-[#6F757C] align-middle">
+              ({coffee.votes} votes)
+            </div>
+          </span>
         ) : (
-          <img src="./images/Star.svg" alt="" className="pl-1" />
+          <span className="flex">
+            <img src="./images/Star.svg" alt="" className="pl-1" />
+            <div className="coffeeRating pl-1 align-middle coffeeTitle text-[#6F757C] ">
+              No ratings
+            </div>
+          </span>
         )}
-        <div className="coffeeRating pl-1 align-middle">{coffee.rating}</div>
-        <div className="coffeeVotes whitespace-nowrap smallText pl-1 items-center flex text-[#6F757C] align-middle">
-          ({coffee.votes} votes)
-        </div>
+
         {!coffee.available && (
           <div className="text-[#ED735D] w-full text-right p-1 label">
             Sold out!
