@@ -29,3 +29,8 @@ body {
   font-size: 14px;
   font-family: "DM Sans", sans-serif;
 }
+
+.borderMe {
+  border: 1px solid red;
+  border-radius: 10px;
+}

@@ -49,7 +49,7 @@ const CoffeeList = () => {
     }
   };
   return (
-    <div className="flex justify-center mt-[5%] h-full">
+    <div className="flex justify-center mt-[5%]">
       <div className="bg-[#1B1D1F] text-[#FEF7EE] rounded-xl">
         <div className="flex flex-col items-center w-[250px] xl:w-[1000px] lg:w-[500px] m-[50px]">
           <div
